@@ -238,7 +238,7 @@ local function collect_variant_commands(from, to)
 end
 
 function M._set_variant_commands()
-  local os = vim.loop.os_uname().sysname
+  local os = vim.uv.os_uname().sysname
   local get_layout_id = c.config.os[os] and c.config.os[os].get_current_layout_id
   local can_check_layout = get_layout_id and type(get_layout_id) == 'function'
 

@@ -144,7 +144,7 @@ local default_config = {
     },
   },
   os = {
-    -- Darwin - Mac OS, the result of `vim.loop.os_uname().sysname`
+    -- Darwin - Mac OS, the result of `vim.uv.os_uname().sysname`
     Darwin = {
       ---Function for getting current keyboard layout on your OS
       ---Should return string with id of layout

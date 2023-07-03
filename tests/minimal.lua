@@ -1,6 +1,6 @@
 -- Based on https://github.com/folke/lazy.nvim/blob/3bde7b5ba8b99941b314a75d8650a0a6c8552144/tests/init.lua
 
-local CWD = vim.loop.cwd() .. '/'
+local CWD = vim.uv.cwd() .. '/'
 
 vim.opt.shiftwidth = 2
 vim.opt.writebackup = false
@@ -39,7 +39,7 @@ local dependencies = {
 local function install_dep(plugin)
   local name = plugin:match('.*/(.*)')
   local package_root = CWD .. '.tests/site/pack/deps/start/'
-  if not vim.loop.fs_stat(package_root .. name) then
+  if not vim.uv.fs_stat(package_root .. name) then
     vim.fn.mkdir(package_root, 'p')
     vim.fn.system({
       'git',

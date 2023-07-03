@@ -33,7 +33,7 @@ M.config = {
     },
   },
   os = {
-    -- Darwin - Mac OS, the result of `vim.loop.os_uname()`
+    -- Darwin - Mac OS, the result of `vim.uv.os_uname()`
     Darwin = {
       ---Function for getting current input method on your OS
       ---Should return string with id of layout

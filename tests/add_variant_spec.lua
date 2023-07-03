@@ -1,7 +1,7 @@
 describe('Langmapper: add various commands', function()
   local layout = 'ru'
 
-  vim.loop.os_uname = function()
+  vim.uv.os_uname = function()
     return {
       sysname = 'Mock',
     }
