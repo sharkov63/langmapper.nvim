@@ -250,7 +250,7 @@ function M._set_variant_commands()
       local to_check = collect_variant_commands(from, to)
       if can_check_layout then
         for key, value in pairs(to_check) do
-          vim.keymap.set('n', key, function()
+          vim.keymap.set({ 'n', 'v', 'o' }, key, function()
             if get_layout_id() == c.config.layouts[lang].id then
               feed_nmap(value.on_layout)
             else
